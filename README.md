@@ -1,5 +1,4 @@
 # ProPC
-
 Repositório de arquivos de configuração para Computadores pessoais Linux, Windows e Servidores
 
 1. Servidores
