@@ -1,0 +1,24 @@
+https://www.vivaolinux.com.br/dica/Instalando-Drivers-NVIDIA-no-Ubuntu-2004
+
+
+
+https://www.youtube.com/watch?v=eryCPovF9AU
+
+
+sudo apt install hwinfo -y
+
+
+hwinfo --gfxcard --short
+
+
+
+       produto: GF116 [GeForce GTX 550 Ti]
+       fabricante: NVIDIA Corporation
+       ID físico: 0
+       informações do barramento: pci@0000:01:00.0
+       versão: a1
+       largura: 64 bits
+       clock: 33MHz
+       capacidades: pm msi pciexpress vga_controller bus_master cap_list rom
+       configuração: driver=nvidia latency=0
+       
