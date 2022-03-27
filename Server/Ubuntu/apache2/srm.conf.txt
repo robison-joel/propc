@@ -1,0 +1,390 @@
+# Neste arquivo são definidos o espaço de nomes que os usuários visualizarão no
+     # seu servidor http. Este arquivo também define configurações do servidor que
+     # afetam como as requisições são servidas e como os resultados deverão ser
+     # formatados.
+
+     # Veja os tutoriais em http://www.apache.org/ para mais detalhes
+
+     # DocumentRoot: O diretório principal onde você servira seus documentos.
+     # Por padrão, todas as requisições são tomadas através deste diretório,
+     # exceto links simbólicos e aliases que podem ser usados para apontar para
+     # outras localizações no sistema de arquivos.
+     DocumentRoot /var/www
+
+     #
+     # UserDir: O nome do diretório que será adicionado ao diretório home do usuário
+     # caso uma requisição ~usuário for recebida.
+     #
+     <IfModule mod_userdir.c>
+         # Linha abaixo por recomendação de segurança do manual do Apache
+         UserDir disabled root
+         UserDir public_html
+     </IfModule>
+
+
+     #
+     # DirectoryIndex: Nome do arquivo ou arquivos que serão usados como índice do
+     # diretório. Especifique mais de um arquivos separados por espaços ao invés
+     # de um só um nome (como "index") para aumentar a performance do servidor.
+     #
+     <IfModule mod_dir.c>
+         DirectoryIndex index.html index.htm index.shtml index.cgi
+     </IfModule>
+
+     #
+     # Diretivas que controlam a exibição de listagem de diretórios geradas pelo servidor.
+     #
+
+     <IfModule mod_autoindex.c>
+
+         #
+         # FancyIndexing: se você deseja o padrão fancy index ou padrão para a indexação
+         #                de arquivos no diretório. Usando FancyIndexing o servidor
+         #                apache gerará uma listagem de arquivos que poderá ser
+         #                ordenada, usar tipos de ícones e encoding, etc. Veja as
+         #                próximas opções
+         IndexOptions FancyIndexing
+
+         #
+         # As diretivas AddIcon* dizem ao servidor que ícone mostrar para um determinado
+         # arquivo ou extensão de arquivos. Estes somente são mostrados para os
+         # diretórios classificados através da opção FancyIndexing.
+         #
+         AddIconByEncoding (CMP,/icons/compressed.gif) x-compress x-gzip
+
+         AddIconByType (TXT,/icons/text.gif) text/*
+         AddIconByType (IMG,/icons/image2.gif) image/*
+         AddIconByType (SND,/icons/sound2.gif) audio/*
+         AddIconByType (VID,/icons/movie.gif) video/*
+
+         AddIcon /icons/binary.gif .bin .exe
+         AddIcon /icons/binhex.gif .hqx
+         AddIcon /icons/tar.gif .tar
+         AddIcon /icons/world2.gif .wrl .wrl.gz .vrml .vrm .iv
+         AddIcon /icons/compressed.gif .Z .z .tgz .gz .zip
+         AddIcon /icons/a.gif .ps .ai .eps
+         AddIcon /icons/layout.gif .html .shtml .htm .pdf
+         AddIcon /icons/text.gif .txt
+         AddIcon /icons/c.gif .c
+         AddIcon /icons/p.gif .pl .py
+         AddIcon /icons/f.gif .for
+         AddIcon /icons/dvi.gif .dvi
+         AddIcon /icons/uuencoded.gif .uu
+         AddIcon /icons/script.gif .conf .sh .shar .csh .ksh .tcl
+         AddIcon /icons/tex.gif .tex
+         AddIcon /icons/bomb.gif */core
+         AddIcon /icons/deb.gif .deb Debian
+
+         AddIcon /icons/back.gif ..
+         AddIcon /icons/hand.right.gif README
+         AddIcon /icons/folder.gif ^^DIRECTORY^^
+         AddIcon /icons/blank.gif ^^BLANKICON^^
+
+         # DefaultIcon é o ícone que será mostrado para aplicativos que não tiverem um
+         # ícone explicitamente definido.
+
+         DefaultIcon /icons/unknown.gif
+
+         #
+         # AddDescription: isto lhe permite colocar uma curta descrição após um arquivo
+         # nos índices gerados pelo servidor. Estes somente são mostrados para diretórios
+         # com índices organizados usando a opção FancyIndexing.
+         # Formato: AddDescription "descrição" extensão
+         #
+         #AddDescription "GZIP compressed document" .gz
+         #AddDescription "tar archive" .tar
+         #AddDescription "GZIP compressed tar archive" .tgz
+
+
+         # ReadmeName é o nome do arquivo LEIAME que o servidor procurará como
+         # padrão. Estes serão inseridos no fim da listagem de diretórios.
+         Formato: ReadmeName nome
+         #
+         # O servidor procurará primeiro por nome.html, incluído se ele for encontrado,
+         # e então procurará pelo nome e incluirá ele como texto plano se encontrado..
+
+         ReadmeName README
+
+         # HeaderName é o nome do arquivo que deve ser colocado no topo do índice
+         # de diretórios. As regras de procura de nome são as mesmas do arquivo
+         # README
+         HeaderName HEADER
+
+         #
+         # IndexIgnore: um conjunto de nomes de arquivos que a listagem de diretórios
+         # deve ignorar e não incluir na listagem. É permitido o uso de coringas
+         # como no interpretador de comandos.
+         #
+         IndexIgnore .??* *~ *# HEADER* README* RCS CVS *,v *,t
+
+     </IfModule>
+
+     # AccessFileName: O nome do arquivo que será procurado em cada diretório
+     # que contém detalhes sobre as permissões de acesso a um determinado
+     # diretório e opções de listagem. Tenha cuidado ao modificar o nome
+     # deste arquivo, muitas definições que trabalham em cima do nome
+     # .htaccess nos arquivos de configuração deverão ser modificados para
+     # não comprometer a segurança de seu servidor.
+     # Uma falta de atenção neste ponto poderá deixar este arquivo visível
+     # em qualquer listagem de diretórios facilmente...
+
+     AccessFileName .htaccess
+
+     # TypesConfig especifica o arquivo de configuração que contém os tipos
+     # usados pelo servidor
+     TypesConfig /etc/mime.types
+
+     #
+     # DefaultType é o tipo MIME padrão que o servidor utilizará para um documento
+     # caso ele não possa determinar seu conteúdo, como através de extensões
+     # de arquivos. Se o servidor contém em sua maioria texto ou documentos em HTML,
+     # "text/plain" é um bom valor. Caso a maioria do conteúdo seja binários, tal
+     # como aplicativos ou fotos, o tipo mais adequado ao seu caso poderá ser
+     # "application/octet-stream" para evitar que navegadores tentem exibir
+     # aplicativos binários como se fossem texto.
+     # Se desejar uma referência rápida sobre tipos mime, consulte o arquivo
+     # /etc/mime.types
+     #
+     DefaultType text/plain
+
+     #
+     # Document types.
+     #
+     <IfModule mod_mime.c>
+
+         # AddEncoding permite que alguns navegadores (Mosaic/X 2.1 , Netscape, etc)
+         # descompactem dados durante sua abertura. N
+         # Nota: Nem todos os navegadores suportam isto. Esqueça os nomes parecidos,
+         # as seguintes diretivas Add* não tem nada a ver com personalizações
+         # da opção FancyIndexing usada nas diretivas acima.
+
+         AddEncoding x-compress Z
+         AddEncoding x-gzip gz tgz
+
+         #
+         # AddLanguage: permite especificar o idioma do documento. Você pode
+         # então usar a negociação de conteúdo para dar ao navegador um
+         # arquivo no idioma solicitado.
+         #
+         # Nota 1: O sufixo não precisa ser o mesmo da palavra chave do
+         # idioma --- estes com o documento em Polonês (no qual o
+         # código padrão da rede é pl) pode desejar usar "AddLanguage pl .po"
+         # para evitar confusão de nomes com a extensão comum de scripts
+         # scripts em linguagem Perl.
+         #
+         # Nota 2: As entradas de exemplos abaixo mostram que em alguns casos
+         # as duas letras de abreviação do 'Idioma' não é idêntico as duas letras
+         # do 'País' para seu país, como 'Danmark/dk' versus 'Danish/da'.
+         #
+         # Nota 3: No caso de 'ltz' nós violamos a RFC usando uma especificação de
+         # três caracteres. Mas existe um 'trabalho em progresso' para corrigir isto
+         # e obter os dados de referência para limpar a RFC1766.
+         #
+         # Danish (da) - Dutch (nl) - English (en) - Estonian (ee)
+         # French (fr) - German (de) - Greek-Modern (el)
+         # Italian (it) - Portugese (pt) - Luxembourgeois* (ltz)
+         # Spanish (es) - Swedish (sv) - Catalan (ca) - Czech(cz)
+         # Polish (pl) - Brazilian Portuguese (pt-br) - Japanese (ja)
+         #
+         AddLanguage da .dk
+         AddLanguage nl .nl
+         AddLanguage en .en
+         AddLanguage et .ee
+         AddLanguage fr .fr
+         AddLanguage de .de
+         AddLanguage el .el
+         AddLanguage it .it
+         AddLanguage ja .ja
+     #    AddCharset ISO-2022-JP .jis
+         AddLanguage pl .po
+     #    AddCharset ISO-8859-2 .iso-pl
+         AddLanguage pt .pt
+         AddLanguage pt-br .pt-br
+         AddLanguage ltz .lu
+         AddLanguage ca .ca
+         AddLanguage es .es
+         AddLanguage sv .se
+         AddLanguage cz .cz
+
+         # LanguagePriority: permite definir a prioridade para a exibição de
+         # documentos caso nenhum documento confira durante a negociação de
+         # conteúdo.
+         #
+         # Para fazer isto, especifique os idiomas em ordem de preferência de exibição
+         # de idiomas.
+         #
+         <IfModule mod_negotiation.c>
+             LanguagePriority pt-br pt es en da nl et fr de el it ja pl ltz ca sv
+         </IfModule>
+
+         #
+         # AddType permite modificar o mime.types sem editar o arquivo, ou fazer
+         # a associação de arquivos a certos tipos de conteúdo.
+         #
+         # Por exemplo, o módulo PHP 3.x (que não faz parte da distribuição do
+         # Apache - veja http://www.php.net) tipicamente utiliza isto:
+         #
+         #AddType application/x-httpd-php3 .php3
+         #AddType application/x-httpd-php3-source .phps
+         #
+         # E para arquivos PHP 4.x use:
+         #
+         #AddType application/x-httpd-php .php
+         #AddType application/x-httpd-php-source .phps
+
+         AddType application/x-tar .tgz
+         AddType image/bmp .bmp
+
+         # hdml
+         AddType text/x-hdml .hdml
+
+         #
+         # AddHandler permite mapear certas extensões de arquivos a programas
+         # "manipuladores" adequados a seu conteúdo. Estes podem ser construídos
+         # no servidor ou adicionados com o comando Action (veja abaixo).
+         #
+         # Se desejar usar includes no lado do servidor, ou servir diretórios
+         # com scripts CGI para fora, descomente as seguintes linhas.
+         #
+         # Para usar scripts CGI:
+         #
+         #AddHandler cgi-script .cgi .sh .pl
+
+         #
+         # Para usar arquivos html gerados através do servidor
+         #
+         #AddType text/html .shtml
+         #AddHandler server-parsed .shtml
+
+         #
+         # Descomente as seguintes linhas para ativar a características de arquivos
+         # send-asis HTTP do servidor Apache
+         #
+         #AddHandler send-as-is asis
+
+         #
+         # Se desejar usar arquivos de mapas de imagens processadas no servidor, use
+         #
+         #AddHandler imap-file map
+
+         #
+         # Para ativar tipo de mapas, você poderá usar
+         #
+         #AddHandler type-map var
+
+     </IfModule>
+     # Fim dos tipos de documentos
+
+     # Preferências padrões de exibição de caracteres (veja http://www.apache.org/info/css-security/).
+
+     AddDefaultCharset on
+     AddDefaultCharsetName iso-8859-1
+
+     # Redirect permite dizer aos clientes que documentos não existem mais no seu servidor
+     # e a nova localização do documento.
+     # Format: Redirect nomeurl url
+     # "nomeurl" é o caminho especificado na url e "url" é a nova localização do
+     # documento
+
+     # Aliases: Inclua aqui quantos apelidos você desejar (sem limite) o formato é:
+     # Alias nomeurl nomereal
+     # "nomeurl" é o caminho especificado na url e "nomereal" é a localização
+     # do documento no sistema de arquivos local
+
+     # Note que se você incluir uma / no fim de "nomeurl", então o servidor
+     # requisitará que também esteja presente na URL.
+
+     Alias /icons/ /usr/share/apache/icons/
+     Alias /doc/ /usr/doc/
+     Alias /focalinux /var/www/focalinux
+     Alias /debian-br /var/www/debian-br/htdocs
+     Alias /debian /pub/mirror/debian
+
+     # ScriptAlias: Esta diretiva controla que diretórios contém scripts do servidor.
+     # Format: ScriptAlias fakename realname
+
+     ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+
+     #
+     # Action: permite definir os tipos de mídia que executarão um script quando um
+     # arquivo que conferir for chamado. Isto elimina a necessidade de caminhos de URLs
+     # repetidas para processadores de arquivos CGI frequentemente usados.
+     # Format: Action media/type /cgi-script/location
+     # Format: Action handler-name /cgi-script/location
+     #
+
+     #
+     # MetaDir: especifica o nome do diretório no qual o apache procurará arquivos de
+     # detalhes do módulo mod_cern_meta. Os módulos meta contém cabeçalhos HTTP
+     # adicionais que serão incluídos durante o envio do documento.
+     #
+     #MetaDir .web
+
+     #
+     # Resposta de erros personalizada (no estilo do Apache)
+     # estas podem ser 3 tipos:
+     #
+     #    1) texto plano
+     #ErrorDocument 500 "O servidor fez boo boo.
+     #  n.b.  a aspa (") marca como texto, ela não será exibida
+     #
+     #    2) redirecionamentos locais
+     #ErrorDocument 404 /missing.html
+     #  para redirecionar para a URL local /missing.html
+     #ErrorDocument 404 /cgi-bin/missing_handler.pl
+     #  N.B.: É também possível redirecionar a um script o documento usando includes
+     #  do lado do servidor (server-side-includes).
+     #
+     #    3) redirecionamentos externos
+     #ErrorDocument 402 http://algum.outro_servidor.com/inscricao.html
+     #  N.B.: Muitas das variáveis de ambientes associada com a requisição atual *não*
+     # estarão disponíveis para tal script.
+
+     #
+     # O módulo mod_mime_magic permite o servidor usar várias dicas através do conteúdo
+     # do arquivo para determinar o seu tipo. A diretiva MIMEMagicFile diz ao módulo
+     # onde as definições de dicas estão localizadas. O módulo mod_mime_magic não é
+     # parte do servidor padrão Apache (você precisará adiciona-lo manualmente com
+     # uma linha LoadModule (veja o parágrafo DSO na seção Ambiente Global no
+     # arquivo httpd.conf), ou recompile o servidor e inclua mod_mime_magic como
+     # parte de sua configuração), por este motivo ele está entre as condicionais
+     # <IfModule>. Isto significa que a diretiva MIMEMagicFile somente será processada
+     # caso o módulo estiver ativo no servidor.
+     #
+     <IfModule mod_mime_magic.c>
+         MIMEMagicFile conf/magic
+     </IfModule>
+
+
+     <IfModule mod_setenvif.c>
+         #
+         # As seguintes diretivas modificam o funcionamento da resposta normal do
+         # servidor HTTP.
+         # A primeira diretiva desativa o keepalive para o Netscape 2.x e navegadores que
+         # as falsificam. Existem problemas conhecidos com estas implementações de
+         # navegadores. A segunda diretiva é para o MS IE 4.0b2 que tem uma implementação
+         # defeituosa do HTTP/1.1 e não suporta adequadamente o keepalive quando ele
+         # utiliza as respostas de redirecionamento 301 e 302.
+         #
+         BrowserMatch "Mozilla/2" nokeepalive
+         BrowserMatch "MSIE 4\.0b2;" nokeepalive downgrade-1.0 force-response-1.0
+
+         #
+         # As seguintes diretivas desativam as respostas HTTP/1.1 para navegadores que
+         # violam a especificação HTTP/1.0 não sendo capaz de enviar uma resposta
+         # 1.1 básica.
+         #
+         BrowserMatch "RealPlayer 4\.0" force-response-1.0
+         BrowserMatch "Java/1\.0" force-response-1.0
+         BrowserMatch "JDK/1\.0" force-response-1.0
+     </IfModule>
+
+     # Se o módulo Perl está instalado, isto será ativado.
+     <IfModule mod_perl.c>
+       Alias /perl/ /var/www/perl/
+       <Location /perl>
+         Options  ExecCGI
+         SetHandler perl-script
+         PerlHandler Apache::Registry
+       </Location>
+     </IfModule>

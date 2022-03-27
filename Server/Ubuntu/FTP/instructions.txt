@@ -1,0 +1,105 @@
+anonymous_enable=NO:
+Impede o login anônimo. Se seu servidor de FTP for público, o valor deve ser YES
+
+local_enable=YES
+Isto permite que os usuários locais efetuem o login. Útil para um servidor privado (nosso caso) como o de um ISP.
+
+write_enable=YES
+Permite que esses usuários escrevam em suas pastas por FTP.
+
+local_umask=022
+Define as permissões dos arquivos depois do upload. O padrão é 077 (octal), escrita e leitura somente pelo dono.
+
+anon_upload_enable=NO
+Ativa o upload anônimo. Este valor deve ser YES se o servidor de FTP for público.
+
+anon_mkdir_write_enable=NO
+Ativa a criação de pastas por usuários anônimos.
+
+dirmessage_enable=YES
+Permite que o conteúdo do arquivos .message seja exibido caso exita no diretório atual. Um bom uso deste recuso é criar o arquivo .message (o conteúdo deve ser texto puro) e colocar informações sobre a pasta atual.
+
+xferlog_enable=YES
+Ativa o log detablhado, que inclui log de upload e download.
+
+connect_from_port_20=YES
+Permite conexões na porta 20 (ftp-dados).
+
+chown_uploads=YES
+Se esta opção estiver habilitada, cada upload de arquivo executado pelo usuário anônimo terá automaticamente, como dono do arquivo, o usuário especificado na opção chown_username. Não é recomendado que seja feito upload com o usuário root
+
+chown_username=whoever
+Permite especificar qual usuário será o dono dos arquivos que forem enviados para o servidor (upload) pelo usuários anônimo.
+
+xferlog_file=/var/log/vsftpd.log
+Pode ser especificado em qual arquivo serão registrados os logs do serviço vsftpd. O padrão é /var/log/vsftpd.log.
+
+xferlog_std_format=YES
+Se estiver habilitado, o arquivo de log será gerado no formato padrão do ftpd xferlog.
+
+idle_session_timeout=1800
+Define o tempo de desconxão automática por inatividade.
+
+data_connection_timeout=120
+Tempo permitido de ociosidade (em segundos) em uma conexão antes que o cliente remoto seja desconectado.
+
+nopriv_user=ftpsecure
+Esta opção é recomendada para definir um usuário único do sistema, o qual será utilizado pelo servidor FTP que seja totalmente isolado e sem privilégios. Geralmente escolhe-se o usuário nobody.
+
+userlist_enable=YES
+Com esta opção ativada, o vsftpd irá carregar uma lista de nome de usuários a partir do arquivo especificado em userlist_file. Se o usuário tentar conectar usando um nome da lista, ele será PROIBIDO de fazer o login. Mesmo digitando a senha corretamente, terá um retorno de erro de acesso.
+
+userlist_deny=YES
+Esta opção só será examinada userlist_enable esteja ativada. Ela faz com que os usuários da lista userlist_file sejam negados antes mesmo de solictar a senha. Isso serve para impedir login com senhas nulas, chamadas de cleartext (texto puro).
+
+userlist_file=/etc/vsftpd.user_list
+Nesta opção pode ser especificado um arquivo, o qual conterá o nome dos usuários a serem negados pela opção userlist_enable.
+
+check_shell=YES
+NOTA: Esta opção só funciona caso não se utilize autenticação via PAM paravsftpd. Se desabilitada, vsftpd não ira checar o /etc/shells para saber se o shell do usuário é válido para conexões locais.
+
+async_abor_enable=YES
+Quando esta opção é habilitada, um comando do FTP conhecido como async ABOR é ativado. Alguns clientes de FTP mais antigos podem apresentar problemas se esta opção não estiver habilitada, porém ela representa um futo na segurança.
+
+ascii_upload_enable=YES
+Quando habilitada, o modo ASCII de transferência de dados é ativado para uploads.
+
+ascii_download_enable=YES
+Quando habilitada, o modo ASCII de transferência de dados é ativado para downloads.
+
+fptd_banner=Bem Vindo ao FTP
+O banner de boas vindas, quando é feito login no servidor FTP, pode ser personalizado.
+
+deny_email_enable=YES
+Endereços de e-mails anônimos podem ser desabilitados, ou seja, isso proibirá o login de usuários que possuem esse endereços. Prático para combater ataques do tipo DOS.
+
+banned_email_file=/etc/vsftpd.banned_emails
+Esta opção anda em conjunto com a deny_email_enable. Pode-se especificar um arquivo onde estarão listados os endereços de e-mails que serão banidos.
+
+chroot_local_user=YES
+Define que o usuário conectado deve ficar preso num diretório raiz. Esta opção é útil em servidores de hospedagem.
+
+chroot_list_enable=YES
+Habilita uma lista de usuários que estarão presos em um diretório raiz.
+
+chroot_list_file=/etc/vsftpd.chroot_list
+Esta opção define qual é o arquivo que irá conter a lista de usuários para chroot.
+
+listen=YES
+Define a execução do vsftpd em modo standalone. Se definido como YES, requer background=YES. Se for iniciado pelo xinetd, deve ficar no NO.
+
+text_userdb_names=YES
+Ativa a exibição dos nomes de usuários e grupos nas listagens de arquivos e diretório. Se definido como NO serão exibidos do IDs.
+
+use_localtime=YES
+Determina a exibição das datas em local time zone.
+
+ls_recurse_enable=YES
+Esta opção habilita a utilização do comando ls -R. Não é muito útil já que isso, em grandes diretórios, pode consumir muito recurso.
+
+Segurança
+
+Por questões de segurança, pode-se evitar que determinados usuários conectem via FTP.
+
+userlist_enable=YES
+Se esta opção for ativada o vsftpd lerá uma lista de nomes que está na opção do userlist_file(/etc/vsftpd/ftpdusers). Se o usuário tenta acessar o sistema tiver o nome nesse arquivo, terá seu acesso negado antes que sua senha seja perguntada.

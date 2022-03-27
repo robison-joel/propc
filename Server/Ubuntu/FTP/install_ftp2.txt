@@ -1,0 +1,14 @@
+VM 4006
+
+IP: 192.168.16.10
+
+user: trust
+senha: trust
+/home/trust/trustftp
+
+user: fourtrust
+senha: 4trust
+/home/fourtrust/fourtrustftp
+
+
+

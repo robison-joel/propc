@@ -1,0 +1,5 @@
+sudo apt update ; sudo apt list --upgradable ; sudo apt upgrade
+sudo apt install net-tools vim htop
+sudo apt install apache2 apache2-utils apache2-doc
+sudo ufw allow 80
+sudo chmod 777 /var/www/html
