@@ -5,5 +5,5 @@ Repositório de arquivos de configuração para Computadores pessoais Linux, Win
     * [Ubuntu](https://github.com/robison-joel/propc/tree/main/Server/Ubuntu);
 * [PC](https://github.com/robison-joel/propc/tree/main/PC);
     * [Linux](https://github.com/robison-joel/propc/tree/main/PC/linux);
-    * [Windows];
+    * Windows;
 
