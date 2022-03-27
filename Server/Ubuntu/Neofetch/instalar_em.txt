@@ -1,0 +1,8 @@
+
+
+FONTE: https://diolinux.com.br/tutoriais/como-personalizar-o-neofetch.html 
+
+
+Arquivo de configuração do neofecth está em:
+
+~/.config/neofeth
