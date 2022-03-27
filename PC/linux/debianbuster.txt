@@ -1,0 +1,8 @@
+Instalação do driver da nvidia
+
+https://www.vivaolinux.com.br/dica/Instalando-Diver-NVIDIA-no-Debian-10-Buster-para-Iniciantes
+
+
+sudo apt install nvidia-detect -y
+
+nvidia-detect
