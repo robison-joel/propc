@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Wed, 15 Nov 2017 09:04:00 +0100
+Source: woeusb
+Binary: woeusb woeusb-dbgsym
+Architecture: amd64
+Version: 3.3.1
+Distribution: unstable
+Urgency: low
+Maintainer: 林博仁 (Buo-Ren, Lin) <Buo.Ren.Lin@gmail.com>
+Changed-By: 林博仁 (Buo-Ren, Lin) <Buo.Ren.Lin@gmail.com>
+Description:
+ woeusb     - Bootable Windows installation/PE USB storage creator
+Changes:
+ woeusb (3.3.1) unstable; urgency=low
+ .
+   * This is a fake changelog for packaging purpose, for the actual changelog pl-
+     ease refer Commits · slacka/WoeUSB
+     <https://github.com/slacka/WoeUSB/commits>
+Checksums-Sha1:
+ a0d8b9c688c6f58e8e33df07acf0430dd4673045 1092716 woeusb-dbgsym_3.3.1_amd64.deb
+ 5b216201e115e9ce1aa4a7042e9382c4b7bc9684 10397 woeusb_3.3.1_amd64.buildinfo
+ 1ba9ccebcede207da8f8e9b0ca9e662bc86aa70b 249052 woeusb_3.3.1_amd64.deb
+Checksums-Sha256:
+ 3a5f98d6c3bff3e8f3e8b38c706b17d5c242d79358020224af151029dbd7c5c4 1092716 woeusb-dbgsym_3.3.1_amd64.deb
+ 7403769e631d1c51847142aaecfdde91c00374883d0fdf9bb634982462ebcebe 10397 woeusb_3.3.1_amd64.buildinfo
+ 1ffc1c46938dbc854bfc23dca9e2dda4d8477356921f3efe03dbf17d84bb3600 249052 woeusb_3.3.1_amd64.deb
+Files:
+ 5f32889dc4a97551da54d64614536068 1092716 debug optional woeusb-dbgsym_3.3.1_amd64.deb
+ 5f9490d096cfb227fce0fdd330cd187b 10397 utils optional woeusb_3.3.1_amd64.buildinfo
+ cf8774cd2f032d85fa5ac6a0e7444379 249052 utils optional woeusb_3.3.1_amd64.deb
