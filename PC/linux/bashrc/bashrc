@@ -89,16 +89,19 @@ fi
 
 # some more ls aliases
 alias ll='ls -alF'
-alias la='ls -A'
+alias la='ls -la'
 alias l='ls -CF'
 alias rbt='sudo reboot' 
 alias upd='sudo apt update' 
-alias upd='sudo apt update ; sudo apt list --upgradable ; sudo apt upgrade -y'
+alias upg='sudo apt update ; sudo apt list --upgradable ; sudo apt upgrade -y'
 alias meuip='ip addr show | grep "inet 192.168.100."'
 alias instala='sudo apt install '
 alias prosrv='~/script/prosrv.sh'
 alias ipsrv='192.168.100.200'
 alias sshsrv='ssh rjgs@192.168.100.200'
+alias sai='exit'
+alias apaga='sudo rm -rf '
+alias etcher='~/.etcher/./balenaEtcher-1.7.8-x64.AppImage'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
