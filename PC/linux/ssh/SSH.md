@@ -1,6 +1,6 @@
-# SSH
+# MANUAL DO SSH
 
-### 1. O que?
+## 1. O que é?
 Acrônimo de *Secure Socket Shell* É um protocolo de rede que permite acesso a um determinado sistema (Server ou PC), via shell.
 
 ## 2. Qual?
