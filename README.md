@@ -10,12 +10,12 @@ Depuração e expansão constante.
 
 ### Índice
 
-* Servidores
+* Servidores;
 
     * [Ubuntu](https://github.com/robison-joel/propc/tree/main/Server/Ubuntu);
 
 
-* PC
+* PC;
 
     * [Linux](https://github.com/robison-joel/propc/tree/main/PC/linux);
 
