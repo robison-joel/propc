@@ -4,11 +4,10 @@
 Repositório de arquivos de configuração para Computadores pessoais Linux, Windows e Servidores
 
 
----
 ## Status do Projeto
 Depuração e expansão constante.
 
----
+
 ## Índice
 
 * Servidores
