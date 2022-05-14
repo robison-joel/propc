@@ -1,7 +1,7 @@
 # Windows 11 sem TPM2.0
 
 <a id="topo"></a>
-Fórmula que pormete instalar o Windows 11 em computadores que não tem as recomendações de hardware para isso.
+Fórmula que promete instalar o Windows 11 em computadores que não tem as recomendações de hardware para isso.
 
 
 1) Aperte `Shift` + `F10`.
