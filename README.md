@@ -1,9 +1,27 @@
 # ProPC
+
+<a id="topo"></a>
 Repositório de arquivos de configuração para Computadores pessoais Linux, Windows e Servidores
 
-* [Servidores](https://github.com/robison-joel/propc/tree/main/Server);
-    * [Ubuntu](https://github.com/robison-joel/propc/tree/main/Server/Ubuntu);
-* [PC](https://github.com/robison-joel/propc/tree/main/PC);
-    * [Linux](https://github.com/robison-joel/propc/tree/main/PC/linux);
-    * Windows;
 
+---
+## Status do Projeto
+Depuração e expansão constante.
+
+---
+## Índice
+
+* Servidores
+
+    * [Ubuntu](https://github.com/robison-joel/propc/tree/main/Server/Ubuntu);
+
+
+* PC
+
+    * [Linux](https://github.com/robison-joel/propc/tree/main/PC/linux);
+
+    * [Windows](https://github.com/robison-joel/propc/tree/main/PC/windows);
+
+
+----
+[volta ao menu](#topo)
