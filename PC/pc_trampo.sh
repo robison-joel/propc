@@ -1,4 +1,12 @@
 #!/bin/bash -v
+#
+# =====================================================================================================
+# | TITULO..: SETUP DO SERVICO
+# | CONTEUDO: Script da instalação dos programas do setup de trabalho.
+# | DATA....: 07/06/2022 - 23:10hs
+# | AUTOR...: Robison Joel - http://robison-joel.github.io
+# =====================================================================================================
+#
 # 1. Chrome --------------------------------------------------
 sudo mkdir .chrome
 cd .chrome/
