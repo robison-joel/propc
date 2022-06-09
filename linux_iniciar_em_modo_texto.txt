@@ -1,0 +1,65 @@
+Como configurar o linux para iniciar diretamente em modo texto, diminuindo a energia, maximizando o desempenho da máquina
+
+===================================
+Iniciar, reiniciar e desligar o modo gráfico através do terminal (Gnome)
+
+
+Obs.: dica para ambientes Gnome.
+
+Existe momentos que a interface gráfica do Linux, por algum motivo "estranho", pode travar ou então você deseja que a mesma seja reiniciada. Uma maneira de fazer isso é:
+
+1ª Passo: Abra o terminal e vá até o diretório "/etc/init.d":
+
+cd /etc/init.d
+
+Neste diretório tem um arquivo que se chama "gdm", é com esse arquivo que vamos manipular a interface gráfica.
+
+2º Passo: No nosso caso vamos reiniciar a interface. Para isso é basta usar o seguinte comando:
+
+sudo service gdm restart
+
+Com isso a interface gráfica será reiniciada.
+
+Conteúdo adicional...
+
+Parar a interface gráfica:
+
+sudo service gdm stop
+
+Iniciar:
+
+sudo service gdm start
+
+Reiniciar:
+
+sudo service gdm restart
+
+Fonte:
+
+    http://maguscode.blogspot.com
+
+================================================
+
+Passo 1. Abra um terminal (Usando o Dash ou pressionando as teclas CTRL+ALT+T);
+Passo 2. Copie e cole o comando abaixo no terminal e aperte enter:
+
+sudo gedit /etc/default/grub
+
+Passo 3. Edite o arquivo de configuração /etc/default/grub, fazendo as seguintes mudanças:
+
+    Comente a linha GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”, adicionando # no início. Isso irá desativar a tela colorida do Ubuntu;
+    Mude GRUB_CMDLINE_LINUX=”” para GRUB_CMDLINE_LINUX=”text”. Isso fará com que o Ubuntu inicialize diretamente em modo de texto;
+    Descomente essa linha #GRUB_TERMINAL=console, removendo o # no início. Isso faz com que o menu do GRUB fique em modo de texto (tela preto e branco, sem imagem de fundo)
+
+Como configurar o Ubuntu para inicializar diretamente em modo texto
+
+Passo 4. Salve e feche o arquivo;
+Passo 5. Atualize o Grub com o comando abaixo:
+
+sudo update-grub
+
+Passo 6. Para ver o resultado, reinicie o computador.
+
+Vale lembrar que o procedimento acima pode ser usado em boa parte das distribuições Linux, claro, feitos os devidos ajustes.
+
+==============================================

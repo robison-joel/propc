@@ -1,0 +1,85 @@
+﻿Pacotes de Idiomas
+
+Atualizações 
+
+kate.......:sudo apt-get install kate && sudo apt-get update
+
+Wine:......:sudo apt-get install wine && sudo apt-get update
+
+Virtualbox.:sudo apt-get install virtualbox && sudo apt-get update
+
+Libreoffice:sudo apt-get install libreoffice && sudo apt-get update
+
+Audacious..:sudo apt-get install audacious && sudo apt-get update
+
+vlc........:sudo apt-get install vlc && sudo apt-get update
+
+Gparted....:sudo apt-get install gparted && sudo apt-get update
+
+Krusader...:sudo apt-get install krusader && sudo apt-get update
+
+
+sudo apt-get install -f (Insatala pacotes pendentes)
+
+sudo apt-get update && sudo apt-get upgrade (atualiza)
+
+==============================================================
+
+Java 8 
+
+PPA do WebUpd8:sudo add-apt-repository ppa:webupd8team/java 
+
+atualizar.....:sudo apt-get update 
+
+Instalar......:sudo apt-get install oracle-java8-installer
+
+==============================================================
+
+==============================================================
+
+Notepadqq
+
+Repositório:sudo add-apt-repository ppa:notepadqq-team/notepadqq
+
+Atualiza...:sudo apt-get update
+
+Instala....:sudo apt-get install notepadqq 
+
+=================================================================
+
+=================================================================
+
+WinUSB
+
+Repositório: sudo add-apt-repository ppa:nilarimogard/webupd8
+
+Atualiza...:sudo apt-get update
+
+Instala....:sudo apt-get install winusb
+
+=================================================================
+
+
+=================================================================
+
+Google Chrome
+
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+
+sudo apt-get update ; sudo apt-get install google-chrome-stable -y
+
+
+==================================================================
+
+sudo apt install ubuntu-restricted-extras ubuntu-restricted-addons && sudo apt install kubuntu-restricted-extras kubuntu-restricted-addons && sudo apt install xubuntu-restricted-extras xubuntu-restricted-addons
+&& sudo apt install lubuntu-restricted-extras lubuntu-restricted-addons && sudo apt install libdvd-pkg && sudo add-apt-repository ppa:webupd8team/java && sudo apt update
+&& sudo apt install oracle-java8-installer
+
+====================================================================
+
+Bibliotecas 32 Bits
+
+apt-get update && apt-get install lib32z1 libgtk2.0-0:i386 ligglu1-mesa:i386 libxmu6:i386 libidn11:i386
+
