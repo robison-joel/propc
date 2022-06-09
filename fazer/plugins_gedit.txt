@@ -1,0 +1,23 @@
+~/.gnome2/gedit/plugins
+
+mkdir -p ~/.gnome2/gedit/plugins
+
+
+
+### 2. Plugin Markdown 
+1. Instalar as dependencias
+
+sudo apt install python3-markdown pandoc gir1.2-webkit2-4.0 git -y
+
+sudo mkdir .plugin_gedit
+
+cd .plugin_gedit
+
+git clone https://github.com/maoschanz/gedit-plugin-markdown_preview
+
+cd gedit-plugin-markdown_preview
+
+sudo chmod +x install.sh
+
+./install.sh
+
