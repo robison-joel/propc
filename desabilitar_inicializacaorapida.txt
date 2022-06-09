@@ -1,0 +1,17 @@
+Como desabilitar essa função no Windows 8?
+
+– Vá até o Painel De Controle
+
+– Entre em Hardware e Sons
+
+– Selecione Opções De Energia
+
+– No canto superior esquerdo, clique em Escolher a função dos botões de energia
+
+– Na tela que se abre, clique em Alterar configurações não disponíveis no momento e em seguida, desmarque a opção Ligar inicialização rápida.
+
+Pronto! Basta reiniciar seu computador e fazer o teste na sua distribuição Linux favorita. Você já conseguirá acessar as partições livremente com permissões de leitura e escrita e não vai precisar chegar perto do terminal para isso.
+
+Leia mais em: http://www.showmetech.com.br/tutorial-acesse-livremente-suas-particoes-ntfs-no-linux-em-uma-maquina-em-dual-boot-com-o-windows-8/#ixzz4P4vuJxE4
+Follow us: @showmetech on Twitter | showmetech on Facebook
+

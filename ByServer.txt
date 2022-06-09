@@ -1,0 +1,107 @@
+NOME: Oxalá
+
+IP: 192.168.100.200
+
+Usuário	Senha
+root	824655
+robisonjoel	8246
+ferreira	nega
+
+SERVIÇOS
+
+DNS - Dnsmasq ou Bind9;
+SSH - OpenSSH;
+HTTP - apache2;
+ARQUIVOS - Samba Share;
+IMPRESSORA - CUP's.
+MEDIA - Emby Server;
+PXE - PXELinux;
+
+3.1. Instalação do S.O.
+A instalação se dá através de uma imagem do Debian, baixada do site oficial Debian.org. Dentro das opções que o instalador possibilita, devemos nos atentar a algumas Configurações específicas:
+
+3.2. Durante a instalação: no momento de particionar o disco, reservar 3 partições, nessa ordem:
+
+/ - Partição raiz com capacidade (200Gb).
+/var - Partição onde vai ficar os arquivos http do apache (10Gb).
+/home - Partição home (100 Gb).
+1.2.3. Setar a senhas e usuários, conforme item 1.
+
+1.2.4. Ambiente de trabalho: XFCE.
+
+# sudo apt install xface4
+
+
+GABINETE: Positivo POS-EIH61CE
+
+Socket: LGA1155
+
+CHIPSET: Chipset Intel® H61 Express
+
+RAM: 2 Gb - Arquitetura de memória DDR3 240-pinos 1333/1066 e suporte de até 16 GB
+
+ARMAZENAMENTO: Três HD's, sendo 01 com 500 Gb e 2 com 2 Tb.
+
+ÁUDIO: Codec de audio 6-canais VIA® VT1705. Concordante com especificação de HD.
+
+REDE: Controlador Atheros AR8152-B 10/100 Fast Ethernet (Co-lay AR8151-B Rede Gigabit)
+
+BIOS: AMI BIOS com 32MB SPI ROM Audio, LAN, can be disabled in BIOS Suporte para Plug and Play, STR (S3) / STD (S4) com monitoramento do Hardware e Multi Boot.
+
+Conectores internos:
+1 x Conector de Energia ATX de 24 pinos;
+1 x 4-pin 12V Connector;
+1 x Conectores CPU_FAN de 4 pinos;
+1 x Conectores SYS_FAN de 3 pinos;
+1 x Conector para alto-falante;
+1 x Conector de saída SPDIF;
+1 x Conector clear CMOS;
+1 x Conector serial (COM2);
+4 x Conectores SATA 3Gb/s;
+2 x Conectores USB 2.0 suportam 4 portas USB adicionais;
+1 x conector TPM;
+1 x Conector case open;
+1 x Conector de áudio de painel frontal;
+1 x Botão de painel frontal/conector LED.
+Conectores de painel traseiro:
+1 x Conector de teclado PS/2 e mouse PS/2;
+1 x Conector D-sub(VGA);
+1 x saída HDMI (Opcional);
+1 x Conector de rede RJ45;
+1 x Conjunto de conectores de Áudio (Line-in, Line-out, Mic-in);
+4 x Portas USB 2.0.
+
+
+
+
+# This file is generated from information provided by
+
+# the datasource.  Changes to it will not persist across an instance.
+
+# To disable cloud-init's network configuration capabilities, write a file
+
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+
+# network: {config: disabled}
+
+network:
+
+   version: 2
+
+   renderer: networkd
+
+   ethernets:
+
+     enp2s0:
+
+       dhcp4: true
+
+       dhcp6: false
+
+       addresses: [192.168.100.200/24]
+
+       gateway4: 192.168.100.1
+
+       nameservers: 
+
+		 addresses: [192.168.100.1]

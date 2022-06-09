@@ -1,0 +1,34 @@
+Lista de Softwares que deverão ser reinstalados em uma suposta formatação
+
+Wine;
+Libreoffice;
+PlayOnLinux;
+WinUsb;
+Kate;
+Bluegriffon;
+VirtualBox
+Gnotes
+Chrome;
+Audacious
+Spotify :
+	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 && echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list && sudo apt-get update && sudo apt-get install spotify-client
+
+Htop
+Krusader
+Quadrapassel
+Remmina
+VIM
+vlc: $ sudo apt-get install vlc browser-plugin-vlc
+Gparted
+
+Java 8 + extras : sudo apt install ubuntu-restricted-extras ubuntu-restricted-addons && sudo apt install kubuntu-restricted-extras kubuntu-restricted-addons && sudo apt install xubuntu-restricted-extras xubuntu-restricted-addons && sudo apt install lubuntu-restricted-extras lubuntu-restricted-addons && sudo apt install libdvd-pkg && sudo add-apt-repository ppa:webupd8team/java && sudo apt update && sudo apt install oracle-java8-installer
+
+Notepadqq: Repositório:sudo add-apt-repository ppa:notepadqq-team/notepadqq && sudo apt-get update && sudo apt-get install notepadqq 
+
+WinUSB: add-apt-repository ppa:colingille/freshlight && sudo apt-get update && sudo apt-get install winusb
+
+Google Chrome: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' sudo apt-get update ; sudo apt-get install google-chrome-stable
+
+Permitir Compartilhamento de Área de Trabalho;
+Pesquisar Drivers
+Suporte a Idiomas
