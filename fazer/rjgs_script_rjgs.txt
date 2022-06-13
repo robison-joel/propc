@@ -1,0 +1,69 @@
+﻿#!/bin/bash
+#
+# DVD Styler
+sudo add-apt-repository ppa:ubuntuhandbook1/dvdstyler -y
+# Kodi
+# sudo apt-get install software-properties-common -y
+#sudo add-apt-repository ppa:team-xbmc/ppa -y
+#
+#Notepadqq
+sudo add-apt-repository ppa:notepadqq-team/notepadqq -y
+#
+#KDE Connect
+#sudo add-apt-repository ppa:vikoadi/ppa
+#
+#Java
+sudo add-apt-repository ppa:webupd8team/java -y
+#
+#Wine
+sudo add-apt-repository ppa:ubuntu-wine/ppa-y
+#
+#
+#ATUALIZA
+sudo apt update
+sudo apt list --upgradable
+sudo apt upgrade -y
+sudo apt update
+#
+#
+#INSTALA SEM REPOSITORIO
+#
+sudo apt install grsync -y
+sudo apt install brasero -y
+sudo apt install kolourpaint4 -y
+sudo apt install kate -y
+sudo apt install wine -y 
+sudo apt install virtualbox -y 
+sudo apt install libreoffice -y 
+sudo apt install vlc -y 
+sudo apt install audacious -y 
+sudo apt install firefox -y 
+sudo apt install unrar -y
+sudo apt install audacity -y 
+#
+#Spotify
+#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 && echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list && sudo apt-get update && sudo apt-get install spotify-client
+#
+#INSTALA
+#DVD Styler
+sudo apt install dvdstyler -y
+#
+#Kodi
+#sudo apt-get install kodi -y
+sudo apt-get install kodi-pvr-dev kodi-pvr-argustv kodi-pvr-demo kodi-pvr-dvbviewer kodi-pvr-iptvsimple kodi-pvr-mediaportal-tvserver kodi-pvr-mythtv kodi-pvr-nextpvr kodi-pvr-njoy kodi-pvr-hts kodi-pvr-vdr-vnsi kodi-pvr-vuplus
+#
+#Notepadqq
+sudo apt-get install notepadqq -y
+#
+#KDE Connect
+#sudo apt-get install indicator-kdeconnect kdeconnect -y
+#
+#Java
+sudo apt-get install oracle-java8-installer -y
+#
+#ATUALIZA
+sudo apt update
+sudo apt list --upgradable
+sudo apt upgrade -y
+sudo apt update
+

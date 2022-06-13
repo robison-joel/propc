@@ -1,0 +1,12 @@
+                     ____     _  ____ ____
+                    |  _ \   | |/ ___/ ___|
+                    | |_) |  | | |  _\___ \
+                    |  _ < |_| | |_| |___) |
+                    |_| \_\___/ \____|____/
+
+=================================================================================================
+| TITULO..: INSTALAÇÃO DO WOEUSB NG
+| CONTEUDO: Instalação do WoeUSB NG. Programa que cria um pendrive inicializável do Windows no Linux.
+| DATA....: 05/06/2022 - 14:21hs
+| AUTOR...: Robison Joel - http://robison-joel.github.io
+================================================================================================
