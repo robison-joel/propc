@@ -1,17 +1,19 @@
-#Aki pega o que digitar e coloca na variavel user
+#!/bin/bash
 
-echo "nome de usuario :"
+# Coleta do nome do usuario e guarda na variavel $user
+echo "Nome de usuario :"
 read user
+
 sudo adduser $user
 
-# Aki ele nao faz nada + do que a saida do comando echo $user ele coloca no arquivo NomeDeUsuario.txt
-
+# Adiciona o nome do usuario em NomeDeUsuario.txt
 echo $user >> NomeDeUsuarios.txt
-
-# Se usar apenas '>' em vez de '>>' , sempre que for executado , ele ira apagar o conteudo e escrever o que o usuario digitar , se deixar com '>>' ele sempre vai colocar no final do arquivo
 
 echo "Digite a sua senha, de novo:"
 read -ers senha # aki ele nao aparece o que digitou e aguarda um enter
-#sudo passwd $user $senha
 
+# Atribui a senha ao usuario
+sudo passwd $user $senha
+
+# Manda a senha apra o arquivo SenhaDeUsuarios.txt
 echo $senha >> SenhaDeUsuarios.txt
