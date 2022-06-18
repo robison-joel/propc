@@ -1,0 +1,23 @@
+NOME...: Róbison Joel Guimarães Simon
+DATA...: 30/12/2021
+ASSUNTO: Sintaxe do BOX-SHADOW em CSS 3.
+=========================================================================================================================
+
+1. SINTAXE
+
+seletor{
+    box-shadow: A B C D E F;
+}
+
+Onde:
+
+A. Opção INSET ou OUTSET
+
+    INSET: Coloca a sombra pra dentro do elemento.
+
+    OUTSET: Coloca a sombra para o lado de fora da box (valor padrão).
+
+B. OFFSET X
+
+
+

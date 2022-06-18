@@ -1,0 +1,49 @@
+NOME...: Róbison Joel Guimarães Simon
+DATA...: 30/12/2021
+ASSUNTO: Principais comandos do git no terminal.
+=========================================================================================================================
+
+1. Inicia o git numa pasta.
+
+    $ git init
+
+2. Confere o status do git na pasta.
+
+    $ git status
+
+3. Adiciona arquivos a um Commit.
+
+    $ git add
+
+4. Adiciona todos os arquivos no Commit.
+
+    $ git add .
+
+5. Envia o Commit com a mensagem:
+
+    $ git commit -m "mensagem sobre as alterações e conteúdo do commit"
+
+
+CONFIGURAÇÃO 
+
+1. Setar usuário
+
+    $ git config --global user.name "Leonardo Comelli"
+
+2. Setar email
+
+    $ git config --global user.email leonardo@software-ltda.com.br
+
+3. Setar editor
+
+    $ git config --global core.editor vim
+
+
+
+REMOVER ARQUIVO
+
+    $git rm meu_arquivo.txt
+
+REMOVER USUÁRIO
+
+    $ git rm -r diretorio
