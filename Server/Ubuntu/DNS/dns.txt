@@ -1,0 +1,27 @@
+
+sudo apt update -y
+
+sudo apt install -y bind9 bind9utils bind9-doc dnsutils
+
+DIRETORIOS DO BIND9
+
+/etc/bind
+
+ARQUIVOS DE CONFIGURAÇÃO
+
+/etc/bind/named.conf
+
+/etc/bind/named.conf.local
+
+zone "grayguide.local" IN { // Domain name
+type master; // Primary DNS
+file "/etc/bind/forward.grayguide.local.db"; // Forward lookup file
+allow-update { none; }; // Since this is the primary DNS, it should be none.
+}
+
+
+zone "grayguide.local" IN { // Domain name
+type master; // Primary DNS
+file "/etc/bind/forward.grayguide.local.db"; // Forward lookup file
+allow-update { none; }; // Since this is the primary DNS, it should be none.
+}
