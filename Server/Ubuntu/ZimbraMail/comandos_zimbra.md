@@ -145,55 +145,59 @@ Comandos úteis na administração do Zimbra.
 
 ```zmprov gdlm lista@dominio.com.br```
 
-36. zmprov gdl lista@dominio.com.br:
+36. Ver todas as informações de uma lista:
+ 
+```zmprov gdl lista@dominio.com.br```
+
+37. Remover membro de uma lista:
 
 ```zmprov rdlm lista@dominio.com.br lista@dominio.com.br```
 
-37. Renomear uma lista de distribuição:
+38. Renomear uma lista de distribuição:
 
 ```zmprov rdl lista@dominio.com.br novalista@dominio.com.br```
 
-38. Ocultar uma lista de distribuição da GAL:
+39. Ocultar uma lista de distribuição da GAL:
 
 ```zmprov mdl lista@dominio.com.br  zimbraHideInGal TRUE```
 
-39. Exibir uma lista de distribuição da GAL:
+40. Exibir uma lista de distribuição da GAL:
 
 ```zmprov mdl lista@dominio.com.br  zimbraHideInGal FALSE```
 
-40. Remover uma lista:
+41. Remover uma lista:
 
 ```zmprov ddl lista@dominio.com.br```
 
-41. Listar Classes:
+42. Listar Classes:
 
 ```zmprov gac```
 
-42. Criar uma nova COS:
+43. Criar uma nova COS:
 
 ```zmprov cc nome_da_classe```
 
-43. Ver todos os atributos de uma classe:
+44. Ver todos os atributos de uma classe:
 
 ```zmprov gc nome_da_classe```
 
-44. Alterar a COS de um usuário:
+45. Alterar a COS de um usuário:
 
 ```zmprov sac usuario@dominio.com.br nova_classe```
 
-45. Para ver quantos usuários de um dominio estão em classes:
+46. Para ver quantos usuários de um dominio estão em classes:
 
 ```zmprov cta dominio.com.br```
 
-46. Obter o atributo da quota da COS:
+47. Obter o atributo da quota da COS:
 
 ```zmprov gc nome_classe zimbraMailQuota```
 
-47. Obter cuota utilizada por cada usuário de um domínio (Formato Conta Quota Quota Utilizada):
+48. Obter cuota utilizada por cada usuário de um domínio (Formato Conta Quota Quota Utilizada):
 
 ```zmprov gqu localhost```
 
-48. Alterar attribute de quota para o valor de 80M, este número deve ser em
+49. Alterar attribute de quota para o valor de 80M, este número deve ser em
 bytes
 
 ```zmprov mc nome_da_classe zimbraMailQuota 83886080```
