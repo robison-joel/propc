@@ -99,15 +99,15 @@ Comandos úteis na administração do Zimbra.
 
 24. Renomer conta mudando de domínio:
 
-```zmprov ra usuario@dominio.com.br dominio@dominio.com.br```
+```zmprov ra usuario@dominio.com.br usuario1@dominio.com.br```
 
 25. Deletar Conta:
 
-```zmprov ra usuario@dominio.com.br usuario@usuariodedominio.com.br```
+```zmpra da usuario@dominio.com.br```
 
 26. Visualizar atributos de uma conta:
 
-```zmpra da usuario@dominio.com.br```
+```zmprov ga usuario@dominio.com.br```
 
 27. zmprov ga usuario@dominio.com.br:
 
