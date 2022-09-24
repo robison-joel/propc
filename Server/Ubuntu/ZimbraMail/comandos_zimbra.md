@@ -109,7 +109,7 @@ Comandos úteis na administração do Zimbra.
 
 ```zmprov ga usuario@dominio.com.br```
 
-27. zmprov ga usuario@dominio.com.br:
+27. Adicionar alias a uma conta:
 
 ```zmprov aaa usuario@dominio.com.br alias_usuario@dominio.com.br```
 
