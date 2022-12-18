@@ -4,7 +4,7 @@
 
 #################################################################
 # NOME...: Robison Joel
-# DATA...: 04/12/2022
+# DATA...: 04/12/2022, 17/12/2022
 # ASSUNTO: Provisionamento de servidor Ubuntu 20.04 com Wordpress
 ##################################################################
 
@@ -41,14 +41,12 @@ echo "##### INFORME O HOSTNAME DO SERVIDOR:"
 
 read -r VAR_HOSTNAME
 
-echo "###################################################################"
 echo "                                                                   "
 echo "###################################################################"
 echo "##### INFORME O USUÁRIO DO SISTEMA:"
 
 read -r VAR_USERNAME
 echo "                                                                   "
-echo "###################################################################"
 echo "##### INFORME O NOME DO ARQUIVO DE LOG:"
 
 read -r VAR_LOG
@@ -62,15 +60,58 @@ echo "                                                                   "
 echo "O Nome do seu usuário será "$VAR_USERNAME
 echo "                                                                   "
 echo "O Nome do seu usuário será "$VAR_LOGFILE
+echo "                                                                   "
+echo "As informações estão corretas: "
+#
+read -r VAR_CONFIRMA
+#
+if [ "$VAR_CONFIRMA" = n ]; then
 
-## 2. Atualização
+    ./pre-server.sh
+
+elif [ "$VAR_CONFIRMA" = N ]; then
+
+    ./pre-server.sh
+
+else 
+
+    echo "INICIANDO EM 3...2...1..."
+    sleep 3s
+fi
+
+sudo apt install figlet -y
+# sudo apt install cowsay -y
+
+echo "###################################################################"
+figlet VIM 
+echo "###################################################################"
+echo "(SIM = y/s ou NÃO = n/N)"
+#
+read -r VAR_VIM
+#
+if [ $VAR_VIM = y ]; then
+
+    sudo apt install vim -y
+
+elif [ $VAR_VIM = s ]; then
+
+    sudo apt install vim -y
+
+else
+
+    echo "Vocẽ escolheu não instalar o vim...continuando!"
+
+fi
+#
+# echo "###################################################################"
+# figlet "Atualizando..."
+# ## 2. Atualização
 # sudo apt update
 # sudo apt list --upgradable
 # sudo apt upgrade -y
 
 ## 3. Identificando a máquina na rede
 # echo wordpress > /etc/hostname
-
 
 ## 4. Configura a localização do server
 # rm -f /etc/localtime ; ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
