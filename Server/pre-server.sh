@@ -2,11 +2,11 @@
 
 # SCRIPT PADRAO PARA START EM SERVIDORES
 
-#################################################################
+#########################################################################
 # NOME...: Robison Joel
-# DATA...: 04/12/2022, 17/12/2022
-# ASSUNTO: Provisionamento de servidor Ubuntu 20.04 com Wordpress
-##################################################################
+# DATA...: 04/12/2022, 17/12/2022, 22/12/2022
+# ASSUNTO: Provisionamento de servidor Ubuntu 20.04 
+#########################################################################
 
 # # 1. PRÉ-REQUISITOS MÍNIMOS
 # * SISTEMA: Ubuntu Server 20.04 64bits.
@@ -15,8 +15,46 @@
 # * DISCO..: 20 GB.
 # * CPU....: 2 Núcleos.
 
-echo "                                                                   "
-echo "                                                                   "
+# Criando a pasta de log.
+sudo mkdir log/
+# Setando permissões na pasta de logs.
+sudo chmod -R 777 log/
+# Criando o arquivo de log.
+VAR_LOGFILE=log/pre-server_$(date +%d-%m-%Y)
+
+echo "Instalando pacotes necessários...AGUARDE!" >> $VAR_LOGFILE
+echo "Instalando o neofetch" >> $VAR_LOGFILE
+#
+sudo apt neofetch -y >> $VAR_LOGFILE
+#
+echo "Instalando o figlet" >> $VAR_LOGFILE
+#
+sudo apt install figlet -y >> $VAR_LOGFILE
+# 
+echo "Instalando o cowsay"  >> $VAR_LOGFILE
+#
+sudo apt install cowsay -y  >> $VAR_LOGFILE
+#
+echo "                                                                   " >> $VAR_LOGFILE
+echo "         #################################################         " >> $VAR_LOGFILE
+echo "      #######################################################      " >> $VAR_LOGFILE
+echo "   #############################################################   " >> $VAR_LOGFILE
+echo "#############                                         #############" >> $VAR_LOGFILE
+echo "##########                                               ##########" >> $VAR_LOGFILE
+echo "##########   SCRIPT DE PRE-INSTALAÇÃO DE UBUNTU SERVER   ##########" >> $VAR_LOGFILE
+echo "##########                                               ##########" >> $VAR_LOGFILE
+echo "#############                                         #############" >> $VAR_LOGFILE
+echo "   #############################################################   " >> $VAR_LOGFILE
+echo "      #######################################################      " >> $VAR_LOGFILE
+echo "         #################################################         " >> $VAR_LOGFILE
+echo "                                                                   " >> $VAR_LOGFILE
+echo "###################################################################" >> $VAR_LOGFILE
+echo "-------------------------------------------------------------------" >> $VAR_LOGFILE
+echo "###################################################################" >> $VAR_LOGFILE
+echo "                                                                   " >> $VAR_LOGFILE
+echo "###################################################################" >> $VAR_LOGFILE
+echo "##### INFORME O HOSTNAME DO SERVIDOR:                              " >> $VAR_LOGFILE
+#
 echo "                                                                   "
 echo "         #################################################         "
 echo "      #######################################################      "
@@ -30,40 +68,39 @@ echo "   #############################################################   "
 echo "      #######################################################      "
 echo "         #################################################         "
 echo "                                                                   "
+echo "###################################################################"
 echo "-------------------------------------------------------------------"
-echo "                                                                   "
-echo "###################################################################"
-echo "###################################################################"
 echo "###################################################################"
 echo "                                                                   "
 echo "###################################################################"
 echo "##### INFORME O HOSTNAME DO SERVIDOR:"
-
-read -r VAR_HOSTNAME
-
-echo "                                                                   "
-echo "###################################################################"
-echo "##### INFORME O USUÁRIO DO SISTEMA:"
-
-read -r VAR_USERNAME
-echo "                                                                   "
-echo "##### INFORME O NOME DO ARQUIVO DE LOG:"
-
-read -r VAR_LOG
-VAR_LOGFILE=$VAR_LOG_$(date +%d-%m-%y_%H:%M)
-
-echo "###################################################################"
-echo "##### CONFIRME AS INFORMAÇÕES ANTES DE COMEÇAR "
-echo "                                                                   "
-echo "O Nome do seu servidor será "$VAR_HOSTNAME
-echo "                                                                   "
-echo "O Nome do seu usuário será "$VAR_USERNAME
-echo "                                                                   "
-echo "O Nome do seu usuário será "$VAR_LOGFILE
-echo "                                                                   "
-echo "As informações estão corretas: "
 #
-read -r VAR_CONFIRMA
+read -r VAR_HOSTNAME  >> $VAR_LOGFILE
+#
+echo "                                                                   "  >> $VAR_LOGFILE
+echo "###################################################################"  >> $VAR_LOGFILE
+echo "##### INFORME O USUÁRIO DO SISTEMA:                                "  >> $VAR_LOGFILE
+echo "                                                                   "
+echo "###################################################################"
+echo "##### INFORME O USUÁRIO DO SISTEMA:                                "
+#
+read -r VAR_USERNAME  >> $VAR_LOGFILE
+#
+echo "                                                                   "  >> $VAR_LOGFILE
+echo "###################################################################"  >> $VAR_LOGFILE
+echo "##### CONFIRME AS INFORMAÇÕES ANTES DE COMEÇAR                     "  >> $VAR_LOGFILE
+echo "                                                                   "  >> $VAR_LOGFILE
+echo "O Nome do seu servidor será: "$VAR_HOSTNAME  >> $VAR_LOGFILE
+echo "                                                                   "  >> $VAR_LOGFILE
+echo "O Nome do seu usuário será: "$VAR_USERNAME  >> $VAR_LOGFILE
+echo "                                                                   "  >> $VAR_LOGFILE
+echo "O Nome do seu usuário será: "$VAR_LOGFILE  >> $VAR_LOGFILE
+echo "                                                                   "  >> $VAR_LOGFILE
+echo "                                                                   "  >> $VAR_LOGFILE
+echo "###################################################################"  >> $VAR_LOGFILE
+echo "As informações estão corretas:                                     "  >> $VAR_LOGFILE
+#
+read -r VAR_CONFIRMA  >> $VAR_LOGFILE
 #
 if [ "$VAR_CONFIRMA" = n ]; then
 
@@ -75,17 +112,25 @@ elif [ "$VAR_CONFIRMA" = N ]; then
 
 else 
 
-    echo "INICIANDO EM 3...2...1..."
+    echo "INICIANDO EM  >> $VAR_LOGFILE
+    sleep 1s
+    echo0 "3..."  >> $VAR_LOGFILE
+    sleep 1s
+    echo "2..."  >> $VAR_LOGFILE
+    sleep 1s
+    echo "1..."  >> $VAR_LOGFILE
     sleep 3s
+    echo "##################################################################"  >> $VAR_LOGFILE
+    figlet "Início"
+    echo "##################################################################"
+
 fi
 
-sudo apt install figlet -y
-# sudo apt install cowsay -y
 
 echo "###################################################################"
 figlet VIM 
 echo "###################################################################"
-echo "(SIM = y/s ou NÃO = n/N)"
+echo "Deseja instalar o VIM? (SIM = y/s ou NÃO = n/N)"
 #
 read -r VAR_VIM
 #
@@ -113,6 +158,7 @@ fi
 ## 3. Identificando a máquina na rede
 # echo wordpress > /etc/hostname
 
+echo "###################################################################"
 ## 4. Configura a localização do server
 # rm -f /etc/localtime ; ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 # echo America/Sao_Paulo > timezone
