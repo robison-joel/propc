@@ -29,8 +29,9 @@ sudo apt install figlet -y | sudo tee -a "$VAR_LOG"
 echo "##################################################" | sudo tee -a "$VAR_LOG"
 echo "                                                  " | sudo tee -a "$VAR_LOG"
 
-# INSTALANDO O GRAVADOR DE AUDIO
+###################################################################################################
 
+##### INSTALANDO O GRAVADOR DE AUDIO
 figlet Gravador de voz  | sudo tee -a "$VAR_LOG"
 echo "      ######################################      " | sudo tee -a "$VAR_LOG"
 echo "   ############################################   " | sudo tee -a "$VAR_LOG"
@@ -60,10 +61,12 @@ echo "                                                  " | sudo tee -a "$VAR_LO
 echo "Tu apertastes o numero: $VAR_GRAVADOR" | sudo tee -a "$VAR_LOG"
 echo "                                                  " | sudo tee -a "$VAR_LOG"
 echo "##################################################" | sudo tee -a "$VAR_LOG"
-#
+#####
+##### COndicional de instalação ########################
+#####
 if [ "$VAR_GRAVADOR" = "3" ]; then
 
-    echo "Vocẽ escolheu não instalar o gravador de audio e sair! " | sudo tee -a "$VAR_LOG"
+    echo "Você escolheu não instalar e SAIR!                " | sudo tee -a "$VAR_LOG"
     echo "                                                  " | sudo tee -a "$VAR_LOG"
     echo "3...                                              " | sudo tee -a "$VAR_LOG"
     sleep 1s  | sudo tee -a "$VAR_LOG"
@@ -89,7 +92,7 @@ if [ "$VAR_GRAVADOR" = "3" ]; then
 
 elif [ "$VAR_GRAVADOR" = 2 ]; then 
     
-    echo "Vocẽ escolheu pular a instalação do gravador de audio! " | sudo tee -a "$VAR_LOG"
+    echo "Você escolheu PULAR a instalação!                 " | sudo tee -a "$VAR_LOG"
     echo "                                                  " | sudo tee -a "$VAR_LOG"
     echo "Continuando...                                    " | sudo tee -a "$VAR_LOG"
     sleep 2s
@@ -104,7 +107,12 @@ elif [ "$VAR_GRAVADOR" = 1 ]; then
     echo "                                                  " | sudo tee -a "$VAR_LOG"
 
 fi
-#
+#####
+##### COndicional de instalação ########################
+#####
+
+####################################################################################################
+
 echo "##################################################" | sudo tee -a "$VAR_LOG"
 echo "                                                  " | sudo tee -a "$VAR_LOG"
 echo "By                                                " | sudo tee -a "$VAR_LOG"
