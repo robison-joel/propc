@@ -1,0 +1,18 @@
+grsync 
+sudo apt-get install vlc browser-plugin-vlc -y
+htop 
+vim 
+virtualbox 
+kolourpaint4 
+samba 
+hollywood 
+audacious
+
+ubuntu-restricted-extras 
+ubuntu-restricted-addons
+apt-get install openssh-server -y
+apt-get install openssh-client -y
+sudo apt install gimp -y
+sudo apt-get install simplescreenrecorder -y
+flameshot
+
