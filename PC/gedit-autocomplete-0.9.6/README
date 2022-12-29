@@ -1,0 +1,37 @@
+        gEedit Autocomplete Plugin
+        Copyright (C) 2006 Alin Avasilcutei <avasilcuteia@gmail.com>
+        Based on an initial version (C) 2006 Osmo Salomaa <otsaloma@cc.hut.fi>
+
+
+gEdit Autocomplete suggests word completions based on the text in the active document
+It first attempts to suggest compound words for a given word start, and only if such
+words do not exist it resorts to suggesting simple words. 
+Compond words consist of simple words joined via concatenators
+The inbuild concatenators are targeting python and C++:  '.'  ':'  '->'  '::'  '://'  '@'
+
+RegEx autocomplete:
+Make sure there's a "whitespace" at the left of the cursor, 
+then type a regular expression and hit <ALT>+"/"
+To make your life easier, the regex search is case insensitive
+Enjoy, you weirdos! :-))
+
+The gEdit Autocomplete plugin is subject to the terms of the GNU General
+Public License. The terms of this license can be found in the LICENSE file
+included in this package.
+
+   RegEx ack:
+   ----------
+   Radu Chirita, 10x for the tip :-)
+
+
+
+
+	More cool stuff
+	---------------
+	http://sourceforge.net/projects/gedit-autocomp
+	http://sourceforge.net/projects/gnome-xp-sky
+	http://sourceforge.net/projects/gedit-fileset
+
+
+
+
