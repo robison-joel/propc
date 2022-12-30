@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# =============================================================================================
+# TITULO..: SCRIPT FLAMESHOT
+# CONTEUDO: ShellScript que instala o flameshot no ubuntu linux
+# DATA....: 30/12/2022 - 00:58hs 
+# AUTOR...: Robison Joel - http://robison-joel.github.io
+# =============================================================================================
+
 ##### CRIANDO LOGS #####################################
 # Criando a pasta de logs.
 if [ -d logs/ ]; then
