@@ -1,0 +1,21 @@
+rdesktop -u rjgs -p 8246 -N -g 1024x768 -T "Wind7" -v 192.168.100.146
+
+
+
+
+rdesktop -u "$VAR_USER" -p "$VAR_SENHA" -g "$VAR_RES" -T "$VAR_TITULO" $VAR_IP
+
+usuario - $VAR_USER
+
+senha - $VAR_SENHA
+
+IP - $VAR_IP
+
+resoluçao - $VAR_RES
+1 - resoluçao - 800x600
+2 - resoluçao - 1024x768
+3 - resoluçao - 1280x720
+
+titulo - $VAR_TITULO=$($VAR_USER" em "$VAR_IP)
+
+

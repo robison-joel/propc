@@ -1,0 +1,95 @@
+grsync 
+sudo apt-get install vlc browser-plugin-vlc -y
+htop 
+vim 
+virtualbox 
+kolourpaint4 
+samba 
+hollywood 
+audacious
+ubuntu-restricted-extras 
+ubuntu-restricted-addons
+apt-get install openssh-server -y
+apt-get install openssh-client -y
+sudo apt install gimp -y
+sudo apt-get install simplescreenrecorder -y
+flameshot
+ajustes
+bb
+usb-creator-common
+usb-creator-gtk
+transmission
+--------------------------------------------------------
+sudo mkdir .chrome
+cd .chrome/
+sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo chmod +x google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt install -f -y
+sudo apt update ; apt list --upgradable ; sudo apt upgrade -y
+cd ..
+--------------------------------------------------------
+--------------------------------------------------------
+sudo mkdir .anydesk
+cd .anydesk/
+sudo wget https://download.anydesk.com/linux/anydesk_6.1.1-1_amd64.deb
+sudo chmod +x anydesk_6.1.1-1_amd64.deb
+sudo dpkg -i anydesk_6.1.1-1_amd64.deb
+sudo apt install -f -y
+sudo apt update ; apt list --upgradable ; sudo apt upgrade -y
+cd ..
+--------------------------------------------------------
+--------------------------------------------------------
+sudo mkdir .teamviewer
+cd .teamviewer/
+sudo wget https://dl.teamviewer.com/download/linux/version_15x/teamviewer_15.30.3_amd64.deb
+sudo chmod +x anydesk_6.1.1-1_amd64.deb
+sudo dpkg -i anydesk_6.1.1-1_amd64.deb
+sudo apt install -f -y
+sudo apt update ; apt list --upgradable ; sudo apt upgrade -y
+cd ..
+--------------------------------------------------------
+
+--------------------------------------------------------
+sudo mkdir .vscode
+cd .vscode/
+sudo wget https://az764295.vo.msecnd.net/stable/e8a3071ea4344d9d48ef8a4df2c097372b0c5161/code_1.74.2-1671533413_amd64.deb
+sudo chmod +x code_1.74.2-1671533413_amd64.deb
+sudo dpkg -i code_1.74.2-1671533413_amd64.deb
+sudo apt install -f -y
+sudo apt update ; apt list --upgradable ; sudo apt upgrade -y
+cd ..
+--------------------------------------------------------
+TEAMS
+wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.5.00.23861_amd64.deb
+onlyoffice
+https://download.onlyoffice.com/install/desktop/editors/linux/old/onlyoffice-desktopeditors_amd64.deb
+--------------------------------------------------------
+##### Atualiza os pacotes
+sudo apt update
+##### Instala o Virtualbox com dependências
+sudo apt install virtualbox virtualbox-dkms virtualbox-source virtualbox-ext-pack -y
+##### Atualiza tudo
+sudo apt update ; apt list --upgradable ; sudo apt upgrade -y
+--------------------------------------------------------
+
+--------------------------------------------------------
+cd ~
+sudo mkdir tmp
+sudo apt update
+sudo apt install samba samba-common gvfs gvfs-backends gvfs-common gvfs-daemons gvfs-fuse fuse fuse2fs fuse-emulator-common fuse-emulator-gtk fuse-emulator-utils fuseiso fusefat fusesmb fuse-zip -y
+sudo apt update ; apt list --upgradable ; sudo apt upgrade -y
+#
+echo "### INSIRA O NOME DO USUARIO SAMBA: "
+read  usuariosmb
+#
+sudo smbpasswd -a $usuariosmb
+#
+cd /etc/samba/
+sudo cp smb.conf smb.conf.bckp
+sudo vim smb.conf
+#
+sudo systemctl restart smbd
+#
+sudo reboot
+-------------------------------------------------------
