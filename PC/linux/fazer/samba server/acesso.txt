@@ -1,0 +1,36 @@
+#######################################################################
+
+NOME...: Robison Joel
+
+QUANDO.: 06/02/2022
+
+ASSUNTO: Arquivo com dados de acesso a sites no geral.
+
+#######################################################################
+
+################ MODELO ################
+
+### SITE
+#link...:
+#usuario: 
+#senha..: 
+
+########################################
+
+### VIVA O LINUX
+
+#link...: 
+
+#usuario: robisonjoel
+
+#senha..: R0b150n#j03l
+
+
+
+### GOOGLE - rjgsinfo@gmail.com
+
+#link...:
+
+#usuario: rjgsinfo@gmail.com
+
+#senha..: r0b150n824655
