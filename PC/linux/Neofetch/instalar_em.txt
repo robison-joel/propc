@@ -1,0 +1,29 @@
+
+TITULO      | NEOFETCH
+-----------:| ----------------------------
+Descrição:  | Insatalação e configuração do Neofetch.
+DATA:       | 18/04/2022
+AUTOR:      | Robison Joel
+Home page:  | [robison-joel.github.io](https://robison-joel.github.io).
+E-mail:     | rjgsinfo@gmail.com 
+
+
+=============================================================
+
+<a id="topo"></a>
+Menu | tópico
+----:|------
+1    | [O que é?](#oque) 
+2    | [Instalação](#instalacao)
+3    | [Configuraçãod](#configuracao)
+4    | [Inserir no terminal](#noterminal)
+
+<a id="como"></a>
+
+FONTE: https://diolinux.com.br/tutoriais/como-personalizar-o-neofetch.html 
+
+
+Arquivo de configuração do neofecth está em:
+
+~/.config/neofeth
+
